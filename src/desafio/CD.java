@@ -22,11 +22,11 @@ public class CD extends Material {
     private int canciones;
     private int unidades;
 
-    public CD(String artist, String genero, String duracionStr, int canciones, int unidades, String L2, String tipo, String id, String titulo) {
+    public CD(String artist, String genero, LocalTime duracion, int canciones, int unidades, String L2, String tipo, String id, String titulo) {
         super(L2, tipo, id, titulo);
         this.artist = artist;
         this.genero = genero;
-        this.duracion =utilities.parseDuracion(duracionStr);
+        this.duracion = duracion;
         this.canciones = canciones;
         this.unidades = unidades;
     }

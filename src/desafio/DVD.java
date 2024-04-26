@@ -16,10 +16,10 @@ public class DVD extends Material{
     private LocalTime duracion;
     private String genero;
 
-    public DVD(String director, String duracionStr, String genero, String L2, String tipo, String id, String titulo) {
+    public DVD(String director, LocalTime duracion, String genero, String L2, String tipo, String id, String titulo) {
         super(L2, tipo, id, titulo);
         this.director = director;
-        this.duracion = utilities.parseDuracion(duracionStr);
+        this.duracion = duracion;
         this.genero = genero;
     }
 

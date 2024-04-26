@@ -36,9 +36,9 @@ public class ModeloTabla {
                 case 0:
                     return material.getL2();
                 case 1: 
-                    return material.getId();
-                case 2: 
                     return material.getTipo();
+                case 2: 
+                    return material.getId();
                 case 3:
                     return material.getTitulo();
                 

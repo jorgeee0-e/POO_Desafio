@@ -12,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import javax.swing.JOptionPane;
 import java.util.Date;
+import javax.swing.JDialog;
 
 
 /**
@@ -21,10 +22,13 @@ import java.util.Date;
 public class utilities {
      public static LocalTime parseDuracion(String duracionStr){
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        try{
-        return LocalTime.parse(duracionStr, formatter);    
+        try {
+            return LocalTime.parse(duracionStr, formatter);    
         } catch (DateTimeParseException e){
-            JOptionPane.showMessageDialog(null, "Formato incorrecto. Utilice hh:mm:ss");
+            JOptionPane optionPane = new JOptionPane("Formato incorrecto. Utilice hh:mm:ss", JOptionPane.ERROR_MESSAGE);    
+            JDialog dialog = optionPane.createDialog("Failure");
+            dialog.setAlwaysOnTop(true);
+            dialog.setVisible(true);
             return null;
             
         }      
@@ -37,7 +41,10 @@ public class utilities {
          try{
              date = dateFormat.parse(dateStr);
          } catch (ParseException e) {
-             JOptionPane.showMessageDialog(null, "Fecha ingresada incorrectamente");
+            JOptionPane optionPane = new JOptionPane("Fecha ingresada incorrectamente", JOptionPane.ERROR_MESSAGE);    
+            JDialog dialog = optionPane.createDialog("Failure");
+            dialog.setAlwaysOnTop(true);
+            dialog.setVisible(true);
          }
          return date;
      }
