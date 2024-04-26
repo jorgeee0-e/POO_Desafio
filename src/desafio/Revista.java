@@ -19,11 +19,11 @@ public class Revista extends Material{
     private Date date;
     private int unidades;
 
-    public Revista(String editorial, String period, String dateStr, int unidades, String L2, String tipo, String id, String titulo) {
+    public Revista(String editorial, String period, Date date, int unidades, String L2, String tipo, String id, String titulo) {
         super(L2, tipo, id, titulo);
         this.editorial = editorial;
         this.period = period;
-        this.date = utilities.parseDate(dateStr);
+        this.date = date;
         this.unidades = unidades;
     }
 
